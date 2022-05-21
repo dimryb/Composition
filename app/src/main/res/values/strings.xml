@@ -22,4 +22,5 @@
     <string name="required_percentage">Необходимый процент правильных ответов: %s</string>
     <string name="score_percentage">Процент правильных ответов: %s</string>
     <string name="retry">Повторить</string>
+    <string name="button_understand">Понятно</string>
 </resources>

@@ -51,6 +51,8 @@
             android:id="@+id/button_understand"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="@string/button_understand"
+            android:layout_margin="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="0dp" />
