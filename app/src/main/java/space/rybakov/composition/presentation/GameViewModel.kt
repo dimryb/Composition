@@ -64,6 +64,8 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
     fun startGame(level: Level) {
         getGameSettings(level)
         startTimer()
+        generateQuestion()
+        updateProgress()
     }
 
     fun chooseAnswer(number: Int) {
@@ -85,6 +87,9 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     private fun calculatePercentOfRightAnswer(): Int {
+        if (countOfQuestion == 0){
+            return 0
+        }
         return ((countOfRightAnswers / countOfQuestion.toDouble()) * 100).toInt()
     }
 
@@ -112,7 +117,7 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
             }
 
             override fun onFinish() {
-                TODO("Not yet implemented")
+                finishGame()
             }
         }
         timer?.start()
@@ -126,7 +131,7 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
         val seconds = millisUntilFinished / MILLIS_IN_SECONDS
         val minutes = seconds / SECONDS_IN_MINUTES
         val leftSeconds = seconds - (minutes * SECONDS_IN_MINUTES)
-        return String.format("%02:%02", minutes, leftSeconds)
+        return String.format("%02d:%02d", minutes, leftSeconds)
     }
 
     private fun finishGame() {
