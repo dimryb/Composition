@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModelProvider
 import space.rybakov.composition.domain.entity.Level
 import java.lang.RuntimeException
 
+@Suppress("UNCHECKED_CAST")
 class GameViewModelFactory(
     private val level: Level,
     private val application: Application
